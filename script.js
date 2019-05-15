@@ -117,7 +117,7 @@ console.log("Is Mark's BMI higher than John's? " + markHigherBMI);
 */
 
 /* If Else Statements */
-
+/*
 var firstName = "John";
 var civilStatus = "single";
 
@@ -150,13 +150,13 @@ if (BMIMark > BMIJohn) {
 } else {
   console.log('John\'s BMI is higher than Mark\'s);
 }
-
+*/
 //var markHigherBMI = BMIMark > BMIJohn;
 //console.log("Is Mark's BMI higher than John's? " + markHigherBMI);
 
 /* Boolean Logic */
 
-
+/*
 var firstName = 'John';
 var age = 16;
 
@@ -169,4 +169,62 @@ if (age < 13) {
 } else {
   console.log(firstName + ' is a man');
 }
+*/
+/* Ternary Operators */
+/*
+var firstName = 'John';
+var age = 16;
 
+age >= 21 ? console.log(firstName + ' drinks beer.')
+: console.log(firstName + ' drinks juice.');
+
+var drink = age >= 21 ? 'beer' : 'juice';
+console.log(drink);
+*/
+//same thing as a non ternary expression
+/*
+if (age >= 18) {
+  var drink = 'beer';
+} else {
+  var drink = 'juice';
+}
+*/
+
+//switch statement
+//good way to replace a huge if/else statement
+/*
+var job = 'teacher';
+switch (job) {
+  //works for more than one condition
+  case 'teacher':
+  case 'instructor':
+    console.log(firstName + ' teaches kids how to code');
+  break;
+  case 'driver':
+console.log(firstName + ' drives for uber in Lisben');
+  break;  
+  case 'designer':
+console.log(firstName + ' designs beautiful webpages');
+  break;
+  default:
+console.log(firstName + ' does something else')
+}
+*/
+
+//making a switch work with if/else with ranges
+/*
+switch (true) {
+  case age < 13:
+    console.log(firstName + ' is a boy');
+    break;
+  case age >= 13 && age <20:
+    console.log(firstName + 'is a teenager.');
+    break;
+  case age >= 20 && age < 30:
+    console.log(firstName + ' is a young man.');
+    break;
+  default:
+    console.log(firstName + 'is a man.');
+}
+
+*/
