@@ -192,6 +192,7 @@ if (age >= 18) {
 
 //switch statement
 //good way to replace a huge if/else statement
+// || requires either to be true while && requires both condidtions be true
 /*
 var job = 'teacher';
 switch (job) {
@@ -228,3 +229,26 @@ switch (true) {
 }
 
 */
+
+//*******************************
+/*  Truthy and Falsy values and equlity operators
+*/
+
+//falsy values include : undefined, null, 0, '', NaN
+//truthy values inclide: Not falsy values
+
+//handy way to check if a value has been defined
+var height;
+
+height = 23;
+
+//if no varibale is entered it will not be defined
+//since 9 is undefined we need to make a case for 0 to be defined
+// === is a stict operator and compares the two values as written
+// == operator does coersion and can take '23' and convert it to a number 23 to compare
+// its usually best practice to use the strict operator
+if (height || height === 0) {
+  console.log("Variable is defined");
+} else {
+  console.log("Variable has not been defined");
+}
