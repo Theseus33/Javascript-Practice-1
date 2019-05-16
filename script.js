@@ -291,4 +291,31 @@ if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
 
 /*******
  * FUNCTIONS
+ * DRY - Dont Repeat Yourself
  */
+
+function calculateAge(birthYear) {
+  return 2018 - birthYear;
+}
+
+var ageJohn = caclulateAge(1990);
+var ageMike = caclulateAge(1948);
+var ageMary = caclulateAge(1969);
+console.log(ageJohn, ageMike, ageMary);
+
+//Calculate years left till retirement
+
+function yearsUntilRetirement(year, firstName) {
+  var age = calculateAge(year);
+  var retirement = 65 - age;
+
+  if (retirement > 0) {
+    console.log(firstName + " reitires in " + retirement + " years.");
+  } else {
+  }
+  console.log(firstName + " is already reitired.");
+}
+
+yearsUntilRetirement(1990, John);
+yearsUntilRetirement(1948, Mike);
+yearsUntilRetirement(1969, Mary);
