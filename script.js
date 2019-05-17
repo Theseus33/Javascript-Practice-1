@@ -476,3 +476,33 @@ jane.birthYear = 1969;
 jane["lastName"] = "Smith";
 console.log(jane);
 */
+
+/************
+ * Objects and Methods
+ */
+
+var john = {
+  firstName: "John",
+  lastName: "Smith",
+  birthYear: 1990,
+  family: ["Jane", "Mark", "Bob", "Emily"],
+  job: "teacher",
+  isMarried: false,
+  calcAge: function() {
+    //use this to refer to john.birthYear
+    //return 2019 - this.birthYear;
+    this.age = 2019 - this.birthYear;
+  }
+};
+
+//we want to add a function to john that calculates age instead of hardcoding it because it changes every year
+//the function calAge is now a method of john
+
+console.log(john.calcAge());
+
+//to store the age in the john object
+
+//john.age = john.calcAge();
+console.log(john);
+
+//An object has a special keyword called 'this' which refers back to itself.
