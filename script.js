@@ -410,7 +410,7 @@ In the end, John would like to mave 2 arrays:
 1) Containing all three tips (one for each bull)
 2) Containing all three final paid amounts (bill + tip).
  */
-
+/*
 var johnBills = [124, 48, 268];
 
 function tipCalculator(bill) {
@@ -435,3 +435,44 @@ var tips = [
 var finalValues = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 
 console.log(tips, finalValues);
+*/
+
+/***********
+ * Objects and Properties
+ */
+
+//define key value pairs, each value has a name called the key
+//in arrays the order matters a lot while in objects it doesnt
+//easiest way of creating a new object is with the object literal
+//basically a container we can fill with variables which are called properties
+/*
+//Object Literal
+var john = {
+  firstName: "John",
+  lastName: "Smith",
+  birthYear: 1990,
+  family: ["Jane", "Mark", "Bob", "Emily"],
+  job: "teacher",
+  isMarried: false
+};
+
+console.log(john);
+//contents of the object are accessable via dot notation
+console.log(john.firstName);
+//also accessable via array
+console.log(john["lastName"]);
+var x = "birthYear";
+console.log(john[x]);
+
+//can also mutate the data
+john.job = "designer";
+john["isMarried"] = true;
+console.log(john);
+//New Objet syntax
+//make a new empty object then fill it up
+var jane = new Object();
+jane.name = "Jane";
+jane.birthYear = 1969;
+jane["lastName"] = "Smith";
+console.log(jane);
+*/
