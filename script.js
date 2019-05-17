@@ -654,3 +654,76 @@ var john = {
 
 john.calcTips();
 console.log(john);
+
+/*
+ Marks family also went on a holiday, going to 4 different restaurants. The bills were $77, $375,
+ $110, and $45.
+ Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the bill is between 
+ $100 and $300, and 25% if the bill is more thna $300. 
+
+ 5. implement the same functionality as before, this time using Mark's tippingrules.
+ 6. Create a function (not a method) to calculate the average of a given array of tips.
+ HINT: Loop over the array, and in each iteration store thecureent sum ina variable (starting from 0). 
+ After you have the sum of the array, divide it by the number of elements in it to get the average.
+ 7. Calculate the average tip for each family.
+ 8. Log to the console which family paid the highest tips on average. 
+ */
+
+var mark = {
+  fullName: "Mark Miller",
+  bills: [77, 475, 110, 45],
+  calcTips: function() {
+    this.tips = [];
+    this.finalValues = [];
+
+    for (var i = 0; i < this.bills.length; i++) {
+      var bill = this.bills[i];
+      //Determine percentage based on tipping rules
+      var percentage;
+      if (bill < 100) {
+        percentage = 0.2;
+      } else if (bill >= 100 && bill < 300) {
+        percentage = 0.1;
+      } else {
+        percentage = 0.25;
+      }
+
+      //Add results to the corresponding arrays
+      this.tips[i] = bill * percentage;
+      this.finalValues[i] = bill + bill * percentage;
+    }
+  }
+};
+
+function calcAverage(tips) {
+  var sum = 0;
+  for (var i = 0; i < tips.length; i++) {
+    sum = sum + tips[i];
+  }
+  return sum / tips.length;
+}
+
+//Do the calculations
+mark.calcTips();
+console.log(john, mark);
+//calc avg and store in each object
+
+john.average = calcAverage(john.tips);
+mark.average = calcAverage(mark.tips);
+console.log(mark, john);
+
+if (john.average > mark.average) {
+  console.log(
+    john.fullName +
+      "'s faily pays higher tips , with an averge of $" +
+      john.average
+  );
+} else if (mark.average > john.average) {
+  console.log(
+    mark.fullName +
+      "'s faily pays higher tips , with an averge of $" +
+      mark.average
+  );
+} else {
+  console.log("They pay the same amount of tips.");
+}
