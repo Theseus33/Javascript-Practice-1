@@ -330,6 +330,7 @@ yearsUntilRetirement(1969, Mary);
 
 //function expression
 //function immediately finishes if return is triggered though case so no 'break' is needed
+/*
 var whatDoYouDo = function(job, firstName) {
   switch (job) {
     case "teacher":
@@ -346,3 +347,50 @@ var whatDoYouDo = function(job, firstName) {
 console.log(whatDoYouDo("teacher", "John"));
 console.log(whatDoYouDo("designer", "Jane"));
 console.log(whatDoYouDo("retired", "Mark"));
+*/
+
+/***********
+ * ARRAYS
+ */
+
+var names = ["John", "Mark", "Jane"];
+//not as commonly used
+var years = new Array(1990, 1969, 1948);
+
+console.log(names[0]);
+console.log(names.length);
+
+//MUTATE ARRAY DATA
+
+//can change an item in the array
+names[1] = "Ben";
+//add mary to a specific index
+//names[5] = "Mary";
+
+//add mary to final spot in array
+names[names.length] = "Mary";
+console.log(names);
+
+//Different data types
+
+var john = ["John", "Smith", 1990, "teacher", false];
+//add element to end of array
+john.push("blue");
+//add to beginning of array
+john.unshift("Mr.");
+
+//remove last element from array
+john.pop();
+john.pop();
+//remove first element
+john.shift();
+//will return the position of the argument you pass in
+//if passed element is not in array it will return '-1'
+console.log(john.indexOf(1990));
+console.log(john);
+
+var isDesigner =
+  john.indexOf("designer") === -1
+    ? "John is Not a designer"
+    : "John is a designer";
+console.log(isDesigner);
