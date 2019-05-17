@@ -480,6 +480,7 @@ console.log(jane);
 /************
  * Objects and Methods
  */
+/*
 
 var john = {
   firstName: "John",
@@ -495,9 +496,10 @@ var john = {
   }
 };
 
+*/
 //we want to add a function to john that calculates age instead of hardcoding it because it changes every year
 //the function calAge is now a method of john
-
+/*
 console.log(john.calcAge());
 
 //to store the age in the john object
@@ -506,3 +508,50 @@ console.log(john.calcAge());
 console.log(john);
 
 //An object has a special keyword called 'this' which refers back to itself.
+*/
+/***************
+ * Coding Challenge
+ */
+
+/*
+ Lets remember the first coding challenge where Mark and John compared their BMI's. Lets
+ now implement the same functionality with objects and methods. 
+ 1. for each of them create an object with properties for their full name, mass, and height.
+ 2. Then, add a method to each object to calculate the BMI. Save the BMI to the object and also return itfrom the method.
+ 3. In, the end, log to the console who has the highest BMI, together with teh full nameand the respective BMI. 
+
+ Remember: BMI = mass / Height^2 = mass / (height* height). (mass in kg and height in meter)
+ */
+
+var mark = {
+  fullName: "Mark Smith",
+  mass: 100,
+  height: 1.95,
+  calcBmi: function() {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  }
+};
+
+var john = {
+  fullName: "John Smith",
+  mass: 160,
+  height: 1.77,
+  calcBmi: function() {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  }
+};
+//mark.calcBmi();
+//john.calcBmi();
+//can call and immediately return values in the function below instead of calling them seperately
+
+console.log(mark, john);
+
+if (john.calcBmi() > mark.calcBmi()) {
+  console.log(john.fullName + " has a bigher bmi of " + john.bmi);
+} else if (mark.bmi > john.bmi) {
+  console.log(mark.fullName + " has a bigher bmi of " + mark.bmi);
+} else {
+  console.log("They have the same bmi.");
+}
