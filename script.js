@@ -522,7 +522,7 @@ console.log(john);
 
  Remember: BMI = mass / Height^2 = mass / (height* height). (mass in kg and height in meter)
  */
-
+/*
 var mark = {
   fullName: "Mark Smith",
   mass: 100,
@@ -555,3 +555,55 @@ if (john.calcBmi() > mark.calcBmi()) {
 } else {
   console.log("They have the same bmi.");
 }
+*/
+
+/********
+ * Loops and iteration
+ */
+
+//more control structures - loops
+//count from 0-9
+/*
+for (var i = 0; i < 10; i++) {
+  console.log(i);
+}
+
+for (var i = 1; i <= 20; i += 2) {
+  console.log(i);
+}
+*/
+/*
+var john = ["John", "Smith", 1990, "designer", false];
+for (var i = 0; i < john.length; i++) {
+  console.log(john[i]);
+}
+
+//same functionality in while loop
+
+while (i < john.length) {
+  console.log(john[i]);
+  i++;
+}
+*/
+//continue (quit the current iteration of a loop and continue to next one) and break statements (to break out of a loop)
+//allows us to skip non string values in the array
+/*
+var john = ["John", "Smith", 1990, "designer", false];
+for (var i = 0; i < john.length; i++) {
+  if (typeof john[i] !== "string") continue;
+  console.log(john[i]);
+}
+
+//breaks out of loop and quits printing
+for (var i = 0; i < john.length; i++) {
+  if (typeof john[i] !== "string") break;
+  console.log(john[i]);
+}
+
+
+//looping backwards
+var john = ["John", "Smith", 1990, "designer", false, "blue"];
+for (var i = john.length - 1; i >= 0; i--) {
+  console.log(john[i]);
+}
+*/
