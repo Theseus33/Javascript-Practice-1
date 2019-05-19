@@ -758,3 +758,19 @@ future versions, together are called ESNext;
 Some features are supported in modern browsers.
 
  */
+
+/**
+  * How our Code is Executed
+  */
+
+/**
+ * Javascript is always hosted in an envirment typically in a browser such as Chrome Firefox etc
+ * This is where Javascript runs. There can be other hosts such as the Node.js server.
+ * When we write our javascript code and want ot run it the host where the javascript is hosted 
+ * has some kind of javascript engine that takes our code and executes it. There are many different
+ * engines out there, like googles v8 engine that is used in google chrome. There are others like Reno, 
+ * Spidermonkey etc. First the code is parsed by a parser and checks the syntax. If incorrect it throws an
+ * error and stops the execution. If everything is correct the parser then produces a data structure known as
+ * the Abstract Syntax Tree. This is then translated into machine code ( a set of instructions that can be 
+ * executed by the computers processor) where the code runs.
+ */
