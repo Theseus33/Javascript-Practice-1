@@ -625,7 +625,7 @@ for (var i = john.length - 1; i >= 0; i--) {
  4. s an output, create 1) a new array contaiing all the tips 2) an array contaiing final paid amounts (bill + tip.
   HINT: Start with two empty arrays as poperties and fill them up in the loop.
 */
-
+/*
 var john = {
   fullName: "John Smith",
   bills: [124, 48, 268, 180, 42],
@@ -668,7 +668,7 @@ console.log(john);
  7. Calculate the average tip for each family.
  8. Log to the console which family paid the highest tips on average. 
  */
-
+/*
 var mark = {
   fullName: "Mark Miller",
   bills: [77, 475, 110, 45],
@@ -727,3 +727,34 @@ if (john.average > mark.average) {
 } else {
   console.log("They pay the same amount of tips.");
 }
+*/
+
+/****
+ * Javascript Versions
+ */
+
+/*
+ 
+ Short history of javascript
+
+1996: first released in 1996 and changed names from Livescript to Javascript. Has nothing to do with Java.
+
+1997: ES1 (ECMAScript 1) became the first version of the Javascript language standard
+
+2009: ES5: (ECMAScript 5) was released with lots of new features
+
+2015: ES6 (ECMAScript 2015) was released: the biggest update to the language to date
+
+2015: Changed to an annual release cycle with new additions every year renamed for the year released
+
+ES5: Fully supported in all browers;
+Ready to be used today
+
+ES6/2015    }  Well supported in all modern browers
+ES7/ES2016  }  No support in Older Browsers
+ES8/2017    }  Cn use most features in prodution with transpiling and polyfilling (converting to ES5)
+
+future versions, together are called ESNext;
+Some features are supported in modern browsers.
+
+ */
