@@ -860,3 +860,48 @@ Some features are supported in modern browsers.
    * running. and it happens before the code is executed.
    * 
    */
+
+/****
+    * Hoisting in practice
+    */
+
+/*
+calculateAge(1965);     //returns 51
+
+function calculateAge(year) {
+  console.log(2019 - year);
+}
+*/
+/* This is hoisting, in the creation phase of the execution context which is in this case, the global execution 
+context. The function declaration to calculate age is stored in the Variable Object and even before the code is 
+executed. This is why when we enter the execution phase the calculateAge function is already available for us to use.
+So we dont have to declarre the function then use it, we can also use it and later in our code, declare it. This only 
+works for function declarations.
+ */
+/*
+retirement(1965);     //returns 'Uncaught TypeError: retirement is not a function'
+
+var retirement = function(year) {
+  console.log(65 - (2019 - year));
+};
+*/
+// retirement(1990);
+/* this function is a function expression. Hoisting only works for function declarations.
+ */
+
+// variables
+/*
+console.log(age); //returns undefined in console
+var age = 23; //gets stored in the global execution context object
+console.log(age); //returns 23 in console
+
+function foo() {
+  var age = 65;
+  console.log(age); //returns 65 (gets its own execution context object seperate from global even with same name)
+}
+
+foo();
+console.log(age); //returns 23 (stored in global context object)
+
+*/
+// RECAP: We can use function declarations before we actually declare them in our code.
