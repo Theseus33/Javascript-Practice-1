@@ -941,5 +941,64 @@ console.log(age); //returns 23 (stored in global context object)
     locally scoped variables are not visible to their parents. The scope chain only works upwards from the lowest 
     lexical function.
 
-    
+
   */
+
+/****
+   * "This" Keyword
+   */
+
+/* This is stored in the execution context object
+
+  Regular function call: the this keyword points at the global object. The window object, in the browser.
+
+  Method call: (function attached to object) this variable points to the object that is calling the method
+
+  ** The this keyword is not assigned a value until a function where it is defined is actually called**
+
+
+   */
+
+// console.log(this); //returns the window object
+/*
+calculateAge(1985); //returns 34
+
+function calculateAge(year) {
+  console.log(2019 - year);
+  console.log(this); //returns window (since its a global object and not a method)
+}
+*/
+/*
+var john = {
+  name: "John",
+  birthYear: 1990,
+  calculateAge: function() {
+    console.log(this); //returns john object
+    console.log(2019 - this.birthYear);
+    */
+/*
+    function innerFunction() {
+      //although inside the method it is a regular function
+      console.log(this); //returns window (global object)
+    }
+    innerFunction();
+  }
+};
+*/
+/*
+john.calculateAge(); //returns john object
+
+//The rule is that when a function call the default object is the window object.
+
+var mike = {
+  name: "Mike",
+  birthYear: 1984
+};
+
+//method borrowing
+//copies the method from the john object
+mike.calculateAge = john.calculateAge;
+mike.calculateAge(); //object becomes mike object and this refers to the mike object.
+
+//this variable is only assigned a value when the object calls  method.
+*/
