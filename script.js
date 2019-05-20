@@ -905,3 +905,41 @@ console.log(age); //returns 23 (stored in global context object)
 
 */
 // RECAP: We can use function declarations before we actually declare them in our code.
+
+/*****
+ * Scoping and the Scope Chain
+ */
+
+/**
+  *  Scoping answers the question "Where can we access a certain varible or function"
+
+     Each new function creates a scope: the space/environment, in which the varibles it defines are accessable.
+     In other languages - scopes are created by if blocks, for blocks, and while blocks- but NOT in javascript.
+     In Javascript the only way we have to create a new scope is to wrtie a new function. 
+
+     Lexical scoping: a function that is lexically within another function gets access to the scope of the 
+     outer function(parent function). It also gets acess to the variables and functions that the parent 
+     function defines.
+
+
+    Scope chain: 
+
+    var a = 'Hello';    //global scope (a = 'hello')
+    first();            
+
+
+    function first() {  //first() scope inclides [VO1] + [VOglobal] (a = 'Hello' b = 'Hi!') includes function first() second()
+      var b = 'Hi!';
+      second();  
+
+      function second() { //second() scope [Vo2]+[VO1]+[VOglobal] (a = 'Hello' b = 'Hi!' c = 'Hey') only function second()
+        var c = 'Hey';
+        console.log(a + b + c);
+      }
+    }
+
+    locally scoped variables are not visible to their parents. The scope chain only works upwards from the lowest 
+    lexical function.
+
+    
+  */
