@@ -773,4 +773,44 @@ Some features are supported in modern browsers.
  * error and stops the execution. If everything is correct the parser then produces a data structure known as
  * the Abstract Syntax Tree. This is then translated into machine code ( a set of instructions that can be 
  * executed by the computers processor) where the code runs.
+ * 
+ * 
+ */
+
+/********
+  * Execution contexts and stack
+  */
+
+/**
+ * All javascript code needs to run in an environment and these environments are called 'Execution Contexts'. Can imagine it
+ * to be a box or container which stores variables and in which a piece of our code is evaluated and executed.
+ * The default execution context is the Global Execution context- this means code that is not inside any function, that is
+ * associated with the global object. In the browser, that would be the window object.Everything we declare in the 
+ * global context gets attributed to the window object in the browser. Every time we call a function it gets its own brand
+ * new execution context. 
+ * 
+ * var name = 'John';           //global execution context
+ * 
+ * function first() {           //also in global context
+ * var a =  'Hello!';
+ * second();                    //new function calls create new execution contexts taking precedence in the stack
+ * var x = a + name;
+ * }
+ * 
+ * function second() {           //also in global context
+ * var b = 'Hi';
+ * third();                     //once the newest execution context is done executing it pops off the stack and the 
+ * var z = b + name;            //previous context is executed
+ * }
+ * 
+ * function third() {           //also in global context
+ * var c = 'Hey!';
+ * var z = c + name;
+ * }
+ * 
+ * first();                     //Gets its own execution context and is placed above the global execution context
+ *                              //forming the execution stack for the duration of this first function call
+ *                              //the execution context for that function becomes the active context in which 
+ *                              //the code is executed
+ * 
  */
