@@ -814,3 +814,49 @@ Some features are supported in modern browsers.
  *                              //the code is executed
  * 
  */
+
+/*********
+  * Execution contexts in detail: creation and execution phases and hoisting
+  */
+
+/**
+   * Once again we can associate an Execution context with an object. 
+   * This object has three properties:
+   * 
+   * 1. The Variable Object (VO) which will contain function arguments, inner variable declarations, as well as
+   * function declarations.
+   * 
+   * 2. The Scope Chain which contains the currentvariable objects as well as the variable objects of all its parents. 
+   * 
+   * 3. The 'This' variable.
+   * 
+   * 
+   * When a function is called a new execution context is placed on top of the stack and this happens in two phases:
+   * 1. Creation Phase
+   *      A) Creation of the Variable Object (VO)
+   *      B) Creation of the Scope Chain
+   *      C) Determine the value of the 'this' variable and set
+   * 
+   * 2. Execution Phase
+   *      The code of the function that generated the current execution context is ran line by line and all the 
+   *      variables are defined.
+   * 
+   * 
+   * Creation of the Varibale Object (VO)
+   *  1. The argument object is created, containing all the arguments that were passed intothe function.
+   *  2. The code is scanned for function declarations: for each function, a property is created in the 
+   * Variable Object, pointing to the function. This means all the functions will be stored within the
+   * Variable Object even before the code starts executing.
+   *  3. The code is scanned for varibale declarations: for each variable, a property is created in the 
+   * Variable Object, and set to undefined.
+   *  
+   * 2 and 3 is what is commonly known as hoisting. They are available before the execution phase actually 
+   * starts. They are hoisted in a different way though, the difference between functions and variables is 
+   * that functions are already defined before the execution context starts and variables are set to undefined.
+   * Variables can only be defined in the execution phase. The execution phase comes right after the creation
+   * phase.
+   * 
+   * RECAP: Each execution context has an object whcih stores a lot of data that the function will use while its
+   * running. and it happens before the code is executed.
+   * 
+   */
